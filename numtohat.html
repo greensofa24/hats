@@ -1,0 +1,33 @@
+<script>
+function primeFactors(n) {
+const factors = [];
+let divisor = 2;
+while (n >= 2) {
+if (n % divisor == 0) {
+factors.push(divisor);
+n = n / divisor;
+} else {
+divisor++;
+}
+}
+return factors;
+}
+
+const num = 2**31;
+var lookup = {3: "mega", 5: "price tag having"};
+var lookup2 = {1: "blue", 2: "red", 3: "green", 4: "magenta", 5: "cyan", 6: "yellow", 7: "violet", 8: "azure", 9: "rose", 10: "orange", 11: "spring", 12: "chartreuse", 13: "black", 14: "white", 15: "translucent blue", 16: "translucent red", 17: "translucent green", 18: "translucent magenta", 19: "translucent cyan", 20: "translucent yellow", 21: "translucent violet", 22: "translucent azure", 23: "translucent rose", 24: "translucent orange", 25: "translucent spring", 26: "translucent chartreuse", 27: "translucent black", 28: "translucent white", 29: "protanopia", 30: "deuteranopia", 31: "tritanopia", 32: "invisible"};
+var array = [];
+
+twos = 1;
+for (let i in primeFactors(num)) {
+if (primeFactors(num)[i] == 2) {
+twos += 1;
+} else {
+array.push(lookup[primeFactors(num)[i]]);
+}
+}
+array.push(lookup2[twos]);
+
+//document.write(primeFactors(num));
+document.write(array);
+</script>
